@@ -6,7 +6,7 @@ import { Platform, NativeModules } from "react-native";
  * @returns stored language format of lang code. ex: "en"
  */
 
-export const getLastSelectedLanguage = (): string => {
+export const getDeviceNativeLanguage = (): string => {
   let lang;
   if (Platform.OS === "android") {
     lang = NativeModules.I18nManager.localeIdentifier;
