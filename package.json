@@ -1,0 +1,38 @@
+{
+  "name": "@tarikfp/react-native-utils",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "",
+    "tsc": "tsc",
+    "rollup": "rollup -c"
+  },
+  "keywords": [],
+  "author": "tarikfp",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.1",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@types/react": "^17.0.37",
+    "@types/react-native": "^0.66.9",
+    "react": "^17.0.2",
+    "react-native": "^0.66.4",
+    "rollup": "^2.61.1",
+    "rollup-plugin-dts": "^4.0.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.31.1",
+    "typescript": "^4.5.4"
+  },
+  "peerDependencies": {
+    "react": "*"
+  },
+  "files": [
+    "dist"
+  ]
+}
