@@ -1,5 +1,5 @@
 import { Alert, AlertButton } from "react-native";
-import { INativeAlertProps } from "./types/NativeAlert";
+import { INativeAlertProps } from "./types/NativeAlertProps";
 
 /**
  * @function
