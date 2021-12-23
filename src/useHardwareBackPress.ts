@@ -5,8 +5,9 @@ import { HardwareBackPressCallback } from "./types/HardwareBackPressCallback";
 
 /**
  * @function
- * @param @see INativeAlertProps
- * @description for showing native information dialog
+ * @param @see HardwareBackPressCallback
+ * @description registers event listeners for the system's back action, handles
+ * adding removing listener on component mount/unmount
  */
 export const useHardwareBackPress = (
   callback: HardwareBackPressCallback
