@@ -71,7 +71,7 @@ function App() {
     width: getWindowWidth(100),
     height: getWindowHeight("95"),
   };
-
+  
   return <MyComponent style={myStyle} />
 }
 ```
