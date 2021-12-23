@@ -67,14 +67,10 @@ import {getWindowHeight, getWindowHeight} from '@tarikfp/react-native-utils'
 function App() {
   ...
 
-  /* */
-
   const myStyle = {
     width: getWindowWidth(100),
     height: getWindowHeight("95"),
   };
-
-  const deviceNativeLanguage = getDeviceNativeLanguage()
 
   return <MyComponent style={myStyle} />
 }
