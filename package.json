@@ -11,7 +11,13 @@
     "tsc": "tsc",
     "rollup": "rollup -c"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "react-native",
+    "utils",
+    "typescript",
+    "javascript"
+  ],
   "author": "tarikfp",
   "license": "ISC",
   "devDependencies": {

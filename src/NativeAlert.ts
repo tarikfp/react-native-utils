@@ -1,4 +1,5 @@
 import { Alert, AlertButton } from "react-native";
+import { Colors } from "react-natives/Libraries/NewAppScreen";
 import { INativeAlertProps } from "./types/NativeAlertProps";
 
 /**
