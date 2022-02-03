@@ -1,6 +1,17 @@
 import { Alert, AlertButton } from "react-native";
-import { Colors } from "react-natives/Libraries/NewAppScreen";
-import { INativeAlertProps } from "./types/NativeAlertProps";
+
+/**
+ * @description props for displaying native alert function
+ */
+
+export interface INativeAlertProps {
+  readonly title?: string;
+  readonly content: string;
+  readonly buttonOneText: string;
+  readonly buttonTwoText?: string;
+  readonly onPressButtonOne?: () => void;
+  readonly onPressButtonTwo?: () => void;
+}
 
 /**
  * @function

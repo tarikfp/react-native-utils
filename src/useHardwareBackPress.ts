@@ -1,7 +1,14 @@
 import * as React from "react";
 import { BackHandler } from "react-native";
 import { useFocusEffect } from "@react-navigation/native";
-import { HardwareBackPressCallback } from "./types/HardwareBackPressCallback";
+
+/**
+ * @type BackHandler event listener handler
+ * @see BackHandlerStatic for more info regarding event handler
+ * @returns boolean | null | undefined
+ */
+
+export type HardwareBackPressCallback = () => boolean | null | undefined;
 
 /**
  * @function

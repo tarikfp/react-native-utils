@@ -3,7 +3,6 @@ import { Platform, NativeModules } from "react-native";
 /**
  * @function
  * @description return device native locale
- * @returns stored language format of lang code. ex: "en"
  */
 
 export const getDeviceNativeLanguage = (): string => {
@@ -11,9 +10,11 @@ export const getDeviceNativeLanguage = (): string => {
   if (Platform.OS === "android") {
     lang = NativeModules.I18nManager.localeIdentifier;
   } else if (Platform.OS === "ios") {
+    // AppleLanguages: ["tr-US", "en-US", "es-US"]
     lang =
-      NativeModules.SettingsManager.settings.AppleLocale ||
-      NativeModules.SettingsManager.settings.AppleLanguages[0];
+      NativeModules.SettingsManager?.settings.AppleLocale ??
+      NativeModules.SettingsManager?.settings.AppleLanguages[0].split("-")[0] ??
+      "en";
   } else {
     lang = "en";
   }
