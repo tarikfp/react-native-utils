@@ -11,3 +11,4 @@ export {
   HardwareBackPressCallback,
 } from "./useHardwareBackPress";
 export { useKeyboardListener } from "./useKeyboardListener";
+export { getCurrentRouteName } from "./Navigation";
