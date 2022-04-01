@@ -40,7 +40,11 @@
     "typescript": "^4.5.4"
   },
   "peerDependencies": {
-    "react": "*"
+    "react": "*",
+    "react-native": "*",
+    "react-native-vector-icons": "*",
+    "@react-navigation/native": "*",
+    "@react-navigation/stack": "*"
   },
   "files": [
     "dist"

@@ -3,18 +3,15 @@ import { Dimensions, PixelRatio, Platform } from "react-native";
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
 const scale = SCREEN_WIDTH / 320;
 
-export type Percentage = string | number;
-
 /**
  *
- * @param @see Percentage string or number
+ * @param percentage string or number
  * @function
- * @description takes percentage (string or number) as
- * parameter and returns calculated percentage size as number
+ * @description takes percentage (string or number) as parameter and returns calculated percentage size as number
  * @returns window width
  */
 
-export const getWindowWidth = (percentage: Percentage): number => {
+export const getWindowWidth = (percentage: string | number): number => {
   if (typeof percentage === "number") {
     return SCREEN_WIDTH * (percentage / 100);
   } else {
@@ -26,12 +23,11 @@ export const getWindowWidth = (percentage: Percentage): number => {
  *
  * @param percentage string or number
  * @function
- * @description takes percentage (string or number) as parameter and
- * returns calculated percentage size as number
+ * @description takes percentage (string or number) as parameter and returns calculated percentage size as number
  * @returns window height
  */
 
-export const getWindowHeight = (percentage: Percentage): number => {
+export const getWindowHeight = (percentage: string | number): number => {
   if (typeof percentage === "number") {
     return SCREEN_HEIGHT * (percentage / 100);
   } else {

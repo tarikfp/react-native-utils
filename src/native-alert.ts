@@ -1,12 +1,8 @@
 import { Alert, AlertButton } from "react-native";
 
-/**
- * @description props for displaying native alert function
- */
-
 export interface INativeAlertProps {
   readonly title?: string;
-  readonly content: string;
+  readonly content?: string;
   readonly buttonOneText: string;
   readonly buttonTwoText?: string;
   readonly onPressButtonOne?: () => void;
@@ -28,6 +24,7 @@ export const showNativeAlert = (param: INativeAlertProps): void => {
     onPressButtonTwo,
     title,
   } = param;
+
   const buttons: AlertButton[] = [
     {
       text: buttonOneText,
@@ -35,6 +32,7 @@ export const showNativeAlert = (param: INativeAlertProps): void => {
       onPress: () => onPressButtonOne?.(),
     },
   ];
+
   if (buttonTwoText) {
     buttons.push({
       text: buttonTwoText,
@@ -42,7 +40,8 @@ export const showNativeAlert = (param: INativeAlertProps): void => {
       onPress: () => onPressButtonTwo?.(),
     });
   }
-  return Alert.alert(title == undefined ? "" : title, content, buttons, {
+
+  return Alert.alert(!title ? "" : title, content, buttons, {
     cancelable: true,
   });
 };

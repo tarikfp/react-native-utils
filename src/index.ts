@@ -1,14 +1,6 @@
-export { getDeviceNativeLanguage } from "./DeviceNativeLanguage";
-export {
-  getWindowHeight,
-  getWindowWidth,
-  normalize,
-  Percentage,
-} from "./Layout";
-export { showNativeAlert, INativeAlertProps } from "./NativeAlert";
-export {
-  useHardwareBackPress,
-  HardwareBackPressCallback,
-} from "./useHardwareBackPress";
-export { useKeyboardListener } from "./useKeyboardListener";
-export { getCurrentRouteName } from "./Navigation";
+export * from "./hooks";
+export { getDeviceNativeLanguage } from "./device-native-language";
+export { getWindowHeight, getWindowWidth, normalize } from "./layout";
+export { showNativeAlert, INativeAlertProps } from "./native-alert";
+export { useBackButtonHandler, getCurrentRouteName } from "./navigation";
+export { default as Icon, IconProps, IconType } from "./rn-vector-icons";

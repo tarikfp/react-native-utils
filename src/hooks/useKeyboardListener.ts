@@ -11,14 +11,16 @@ type Callback = () => void;
  * @returns void
  */
 
-export const useKeyboardListener = (
+function useKeyboardListener(
   onKeyboardWillShow: Callback,
-  onKeyboardWillHide: Callback
-): void => {
+  onKeyboardWillHide: Callback,
+) {
   useFocusEffect(
     React.useCallback(() => {
       Keyboard.addListener("keyboardWillShow", () => onKeyboardWillShow());
       Keyboard.addListener("keyboardWillHide", () => onKeyboardWillHide());
-    }, [])
+    }, []),
   );
-};
+}
+
+export default useKeyboardListener;
