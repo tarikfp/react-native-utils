@@ -1,26 +1,31 @@
 import * as React from "react";
-import { useFocusEffect } from "@react-navigation/native";
 import { Keyboard } from "react-native";
 
-type Callback = () => void;
-
 /**
- *
- * @param onKeyboardWillShow a callback function @see Callback type fires when keyboard is about to show
- * @param onKeyboardWillHide a callback function @see Callback type fires when keyboard is about to hide
- * @returns void
+ * @returns @boolean indicates whether keyboard is visible or not
  */
+export default function useKeyboardListener(): boolean {
+  const [isKeyboardVisible, setKeyboardVisible] = React.useState(false);
 
-function useKeyboardListener(
-  onKeyboardWillShow: Callback,
-  onKeyboardWillHide: Callback,
-) {
-  useFocusEffect(
-    React.useCallback(() => {
-      Keyboard.addListener("keyboardWillShow", () => onKeyboardWillShow());
-      Keyboard.addListener("keyboardWillHide", () => onKeyboardWillHide());
-    }, []),
-  );
+  React.useEffect(() => {
+    const keyboardDidShowListener = Keyboard.addListener(
+      "keyboardDidShow",
+      () => {
+        setKeyboardVisible(true);
+      },
+    );
+    const keyboardDidHideListener = Keyboard.addListener(
+      "keyboardDidHide",
+      () => {
+        setKeyboardVisible(false);
+      },
+    );
+
+    return () => {
+      keyboardDidHideListener.remove();
+      keyboardDidShowListener.remove();
+    };
+  }, []);
+
+  return isKeyboardVisible;
 }
-
-export default useKeyboardListener;
