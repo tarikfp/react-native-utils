@@ -5,7 +5,7 @@ import { BackHandler } from "react-native";
 
 /**
  * @function
- * @param Callback function which will be executed when ios swipe back action or
+ * @param callback function which will be executed when ios swipe back action or
  * android back button is executed
  */
 

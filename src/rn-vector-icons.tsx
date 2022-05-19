@@ -114,7 +114,7 @@ export type IconType =
   | "Zocial"
   | "Feather";
 
-function IconComponent(props: IconProps) {
+const IconComponent = (props: IconProps) => {
   const { name, color, size, onPress, style, ...textProps } = props;
   const commonProps = {
     name,
@@ -215,7 +215,7 @@ function IconComponent(props: IconProps) {
       return <FontAwesome {...textProps} {...commonProps} />;
     }
   }
-}
+};
 
 IconComponent.defaultProps = {
   size: 20,
@@ -224,4 +224,4 @@ IconComponent.defaultProps = {
   color: "#757575",
 };
 
-export default IconComponent;
+export const Icon = IconComponent;
