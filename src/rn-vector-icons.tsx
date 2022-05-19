@@ -1,29 +1,39 @@
+/* eslint-disable global-require */
 import * as React from "react";
-import type { TextProps, GestureResponderEvent, TextStyle } from "react-native";
-import AntDesign from "react-native-vector-icons/AntDesign";
-import Entypo from "react-native-vector-icons/Entypo";
-import Ionicons from "react-native-vector-icons/Ionicons";
-import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
-import EvilIcons from "react-native-vector-icons/EvilIcons";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
-import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-import Foundation from "react-native-vector-icons/Foundation";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import Zocial from "react-native-vector-icons/Zocial";
-import Octicons from "react-native-vector-icons/Octicons";
-import Fontisto from "react-native-vector-icons/Fontisto";
-import Feather from "react-native-vector-icons/Feather";
+import type {
+  ColorValue,
+  GestureResponderEvent,
+  TextProps,
+  TextStyle,
+} from "react-native";
 
-// Inline requires of icons will fail when unit testing of the button component
+export interface RNVectorIconsIconProps extends TextProps {
+  /**
+   * Size of the icon, can also be passed as fontSize in the style object.
+   *
+   * @default 12
+   */
+  size?: number | undefined;
 
-export interface IconPropsBase extends TextProps {
-  type: IconType;
+  /**
+   * Name of the icon to show
+   *
+   * See Icon Explorer app
+   * {@link https://github.com/oblador/react-native-vector-icons/tree/master/Examples/IconExplorer}
+   */
   name: string;
-  size?: number;
-  color?: string;
-  onPress?: (event: GestureResponderEvent) => void;
+
+  /**
+   * Color of the icon
+   *
+   */
+  color?: ColorValue | number | undefined;
+}
+
+export interface IconPropsBase extends RNVectorIconsIconProps {
+  type: IconType;
   style?: TextStyle;
+  onPress?: (event: GestureResponderEvent) => void;
 }
 
 interface AntDesignProps extends IconPropsBase {
@@ -104,201 +114,114 @@ export type IconType =
   | "Zocial"
   | "Feather";
 
-const Icon = (props: IconProps): JSX.Element => {
+function IconComponent(props: IconProps) {
   const { name, color, size, onPress, style, ...textProps } = props;
+  const commonProps = {
+    name,
+    color,
+    size,
+    onPress,
+    style,
+  };
 
   switch (props.type) {
     case "AntDesign": {
-      return (
-        <AntDesign
-          {...textProps}
-          name={name}
-          size={size}
-          style={style}
-          color={color}
-          onPress={onPress}
-        />
-      );
+      const AntDesign = require("react-native-vector-icons/AntDesign").default;
+      return <AntDesign {...textProps} {...commonProps} />;
     }
+
     case "Entypo": {
-      return (
-        <Entypo
-          {...textProps}
-          name={name}
-          size={size}
-          style={style}
-          color={color}
-          onPress={onPress}
-        />
-      );
+      const Entypo = require("react-native-vector-icons/Entypo").default;
+      return <Entypo {...textProps} {...commonProps} />;
     }
+
     case "Ionicons": {
-      return (
-        <Ionicons
-          {...textProps}
-          name={name}
-          size={size}
-          style={style}
-          color={color}
-          onPress={onPress}
-        />
-      );
+      const Ionicons = require("react-native-vector-icons/Ionicons").default;
+      return <Ionicons {...textProps} {...commonProps} />;
     }
+
     case "SimpleLineIcons": {
-      return (
-        <SimpleLineIcons
-          {...textProps}
-          name={name}
-          size={size}
-          style={style}
-          color={color}
-          onPress={onPress}
-        />
-      );
+      const SimpleLineIcons =
+        require("react-native-vector-icons/SimpleLineIcons").default;
+      return <SimpleLineIcons {...textProps} {...commonProps} />;
     }
+
     case "EvilIcons": {
-      return (
-        <EvilIcons
-          {...textProps}
-          name={name}
-          size={size}
-          style={style}
-          color={color}
-          onPress={onPress}
-        />
-      );
+      const EvilIcons = require("react-native-vector-icons/EvilIcons").default;
+      return <EvilIcons {...textProps} {...commonProps} />;
     }
+
     case "MaterialIcons": {
-      return (
-        <MaterialIcons
-          {...textProps}
-          name={name}
-          size={size}
-          style={style}
-          color={color}
-          onPress={onPress}
-        />
-      );
+      const MaterialIcons =
+        require("react-native-vector-icons/MaterialIcons").default;
+      return <MaterialIcons {...textProps} {...commonProps} />;
     }
+
     case "FontAwesome": {
-      return (
-        <FontAwesome
-          {...textProps}
-          name={name}
-          size={size}
-          style={style}
-          color={color}
-          onPress={onPress}
-        />
-      );
+      const FontAwesome =
+        require("react-native-vector-icons/FontAwesome").default;
+      return <FontAwesome {...textProps} {...commonProps} />;
     }
+
     case "FontAwesome5": {
       const { brand, solid } = props;
+      const FontAwesome5 =
+        require("react-native-vector-icons/FontAwesome5").default;
       return (
         <FontAwesome5
           {...textProps}
-          name={name}
-          size={size}
-          style={style}
-          color={color}
-          onPress={onPress}
+          {...commonProps}
           brand={brand}
           solid={solid}
         />
       );
     }
+
     case "Foundation": {
-      return (
-        <Foundation
-          {...textProps}
-          name={name}
-          size={size}
-          style={style}
-          color={color}
-          onPress={onPress}
-        />
-      );
+      const Foundation =
+        require("react-native-vector-icons/Foundation").default;
+      return <Foundation {...textProps} {...commonProps} />;
     }
+
     case "MaterialCommunityIcons": {
-      return (
-        <MaterialCommunityIcons
-          {...textProps}
-          name={name}
-          size={size}
-          style={style}
-          color={color}
-          onPress={onPress}
-        />
-      );
+      const MaterialCommunityIcons =
+        require("react-native-vector-icons/MaterialCommunityIcons").default;
+      return <MaterialCommunityIcons {...textProps} {...commonProps} />;
     }
+
     case "Zocial": {
-      return (
-        <Zocial
-          {...textProps}
-          name={name}
-          size={size}
-          style={style}
-          color={color}
-          onPress={onPress}
-        />
-      );
+      const Zocial = require("react-native-vector-icons/Zocial").default;
+      return <Zocial {...textProps} {...commonProps} />;
     }
+
     case "Octicons": {
-      return (
-        <Octicons
-          {...textProps}
-          name={name}
-          style={style}
-          color={color}
-          size={size ? size : 18}
-          onPress={onPress}
-        />
-      );
+      const Octicons = require("react-native-vector-icons/Octicons").default;
+      return <Octicons {...textProps} {...commonProps} />;
     }
+
     case "Fontisto": {
-      return (
-        <Fontisto
-          {...textProps}
-          name={name}
-          size={size}
-          style={style}
-          color={color}
-          onPress={onPress}
-        />
-      );
+      const Fontisto = require("react-native-vector-icons/Fontisto").default;
+      return <Fontisto {...textProps} {...commonProps} />;
     }
+
     case "Feather": {
-      return (
-        <Feather
-          {...textProps}
-          name={name}
-          size={size}
-          style={style}
-          color={color}
-          onPress={onPress}
-        />
-      );
+      const Feather = require("react-native-vector-icons/Feather").default;
+      return <Feather {...textProps} {...commonProps} />;
     }
+
     default: {
-      return (
-        <MaterialIcons
-          {...textProps}
-          name={name}
-          size={size}
-          style={style}
-          color={color}
-          onPress={onPress}
-        />
-      );
+      const FontAwesome =
+        require("react-native-vector-icons/FontAwesome").default;
+      return <FontAwesome {...textProps} {...commonProps} />;
     }
   }
-};
+}
 
-Icon.defaultProps = {
+IconComponent.defaultProps = {
   size: 20,
   style: {},
   onPress: () => null,
   color: "#757575",
 };
 
-export default Icon;
+export default IconComponent;
