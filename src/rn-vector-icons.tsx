@@ -184,8 +184,7 @@ const IconComponent = (props: IconProps) => {
     }
 
     case "MaterialCommunityIcons": {
-      const MaterialCommunityIcons =
-        require("react-native-vector-icons/MaterialCommunityIcons").default;
+      const MaterialCommunityIcons = require("react-native-vector-icons/MaterialCommunityIcons");
       return <MaterialCommunityIcons {...textProps} {...commonProps} />;
     }
 
@@ -208,7 +207,6 @@ const IconComponent = (props: IconProps) => {
       const Feather = require("react-native-vector-icons/Feather").default;
       return <Feather {...textProps} {...commonProps} />;
     }
-
     default: {
       const FontAwesome =
         require("react-native-vector-icons/FontAwesome").default;
