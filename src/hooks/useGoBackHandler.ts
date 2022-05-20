@@ -5,8 +5,9 @@ import { BackHandler } from "react-native";
 
 /**
  * @function
- * @param callback function which will be executed when ios swipe back action or
+ * @param onGoBackCallback function which will be executed when ios swipe back action or
  * android back button is executed
+ * @param deps array of dependencies which will be used in the useEffect hook of listeners
  */
 
 export default function useGoBackHandler<

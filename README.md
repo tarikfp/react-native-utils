@@ -1,27 +1,17 @@
-
 # @tarikfp/react-native-utils
 
 Utility functions for react native projects. Written in typescript.
-
-
-
-## Authors
-
-- [@tarikpnr](https://www.github.com/tarikpnr)
-
-
-## Feedback
-
-If you have any feedback, please contact me through tarikdotcom@gmail.com
-
+Nothing is invented in this project. The functions are just derived from existing features over react-native
 
 ## Usage/Examples
 
-## useHardwareBackPress (Android only)
-#### Handling native back press on android devices
+## useGoBackHandler
+
+#### useGoBackHandler is hook which will be executed when ios swipe back action or android back button is executed
+
 ```javascript
 import * as React from 'react'
-import {useHardwareBackPress} from '@tarikfp/react-native-utils'
+import { useGoBackHandler } from '@tarikfp/react-native-utils'
 
 function App() {
   ...
@@ -33,20 +23,58 @@ function App() {
     return true;
   }, [navigation]);
 
-  /* Use the function above as a param of the hook to get desired result */
-
-  useHardwareBackPress(_backAction)
-
-  return <MyComponent />
+  useGoBackHandler(_backAction)
 }
 ```
 
+## useKeyboardListener
 
-## getDeviceNativeLanguage
-#### A function returns device native language (ex: "en", "fr"...)
+#### useKeyboardListener is hook which listens keyboard visibility
+
 ```javascript
 import * as React from 'react'
-import {getDeviceNativeLanguage} from '@tarikfp/react-native-utils'
+import { useKeyboardListener } from '@tarikfp/react-native-utils'
+
+function App() {
+  ...
+
+  const isKeyboardShown = useKeyboardListener();
+
+   if (isKeyboardShown) {
+     ...
+  }
+}
+```
+
+## getCurrentRouteName
+
+#### getCurrentRouteName function that returns active route name
+
+```javascript
+import * as React from 'react'
+import { getCurrentRouteName } from '@tarikfp/react-native-utils'
+
+function TabBar() {
+  ...
+
+  const currentRouteName = getCurrentRouteName();
+
+  if (currentRouteName === "user-profile") {
+    return null;
+  }
+
+  return <MyCustomTabBarComponent />;
+
+}
+```
+
+## getDeviceNativeLanguage
+
+#### A function returns device native language (ex: "en", "fr"...)
+
+```javascript
+import * as React from 'react'
+import { getDeviceNativeLanguage } from '@tarikfp/react-native-utils'
 
 function App() {
   ...
@@ -57,9 +85,10 @@ function App() {
 }
 ```
 
-
 ## Layout utilities
-#### A function takes percentage (string or number) as parameter and returns calculated percentage size as number 
+
+#### A function takes percentage (string or number) as parameter and returns calculated percentage size as number
+
 ```javascript
 import * as React from 'react'
 import {getWindowHeight, getWindowHeight} from '@tarikfp/react-native-utils'
@@ -71,25 +100,26 @@ function App() {
     width: getWindowWidth(100),
     height: getWindowHeight("95"),
   };
-  
+
   return <MyComponent style={myStyle} />
 }
 ```
 
-
 ## Native alert
+
 #### Displays an native alert dialog with the specified params
+
 ```javascript
 import * as React from 'react'
-import {showNativeAlert} from '@tarikfp/react-native-utils'
+import { showNativeAlert } from '@tarikfp/react-native-utils'
 
 function App() {
   ...
 
   /* Sample scenario, where the user provides wrong credentials, then sees alert */
 
-  const {data} = myApi.login('username','12345') 
-  
+  const { data } = myApi.login('username','12345')
+
   if(data.invalidCredentials){
       showNativeAlert({
           title: 'Invalid',
@@ -103,6 +133,35 @@ function App() {
 }
 ```
 
+## Icon component
 
+#### Wrapper over a react native vector package which enables dynamic usage of react-native-vector icons.
 
+```javascript
+import * as React from 'react'
+import { Icon } from '@tarikfp/react-native-utils'
 
+function App() {
+  ...
+  const togglePopupDialog = () => { ... }
+  const iconStyle = { ... }
+
+  return (
+    <Icon
+      onPress={togglePopupDialog}
+      style={iconStyle}
+      color={"#424232"}
+      name="dots-three-horizontal"
+      type="Entypo"
+    />
+  );
+}
+```
+
+## Authors
+
+- [@tarikpnr](https://www.github.com/tarikpnr)
+
+## Feedback
+
+If you have any feedback, please contact me through tarikdotcom@gmail.com
