@@ -7,7 +7,7 @@ Nothing is invented in this project. The functions are just derived from existin
 
 ## Installation
 
-Install my-project with npm
+Install @tarikfp/react-native-utils with npm
 
 ```bash
   npm install @tarikfp/react-native-utils
