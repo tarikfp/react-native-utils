@@ -3,6 +3,27 @@
 Utility functions for react native projects. Written in typescript.
 Nothing is invented in this project. The functions are just derived from existing features over react-native
 
+## Installation
+
+Install my-project with npm
+
+```bash
+  npm install @tarikfp/react-native-utils
+```
+
+or
+
+```bash
+  yarn add @tarikfp/react-native-utils
+
+```
+
+In order to use this package, make sure you have installed following packages in advance.
+
+- react-native-vector-icons
+- @react-navigation/native
+- @react-navigation/stack
+
 ## Usage/Examples
 
 ## useGoBackHandler
