@@ -1,4 +1,4 @@
-# @tarikfp/react-native-utils  &middot; ![](https://img.shields.io/npm/dw/@tarikfp/react-native-utils) ![](https://img.shields.io/bundlephobia/minzip/@tarikfp/react-native-utils) ![](https://img.shields.io/npm/v/@tarikfp/react-native-utils) ![](https://img.shields.io/github/license/tarikpnr/react-native-utils)
+# @tarikfp/react-native-utils  &middot;  [![](https://img.shields.io/npm/dw/@tarikfp/react-native-utils)](https://www.npmjs.com/package/@tarikfp/react-native-utils) [![](https://img.shields.io/bundlephobia/minzip/@tarikfp/react-native-utils)](https://www.npmjs.com/package/@tarikfp/react-native-utils) [![](https://img.shields.io/npm/v/@tarikfp/react-native-utils)](https://www.npmjs.com/package/@tarikfp/react-native-utils) [![](https://img.shields.io/github/license/tarikpnr/react-native-utils)](https://github.com/tarikpnr/react-native-utils/blob/master/LICENSE)
 
 
 
