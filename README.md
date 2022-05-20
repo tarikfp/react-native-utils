@@ -1,4 +1,5 @@
-# @tarikfp/react-native-utils
+# @tarikfp/react-native-utils  &middot; ![](https://img.shields.io/npm/dw/@tarikfp/react-native-utils) ![](https://img.shields.io/bundlephobia/minzip/@tarikfp/react-native-utils) ![](https://img.shields.io/npm/v/@tarikfp/react-native-utils)
+
 
 Utility functions for react native projects. Written in typescript.
 Nothing is invented in this project. The functions are just derived from existing features over react-native
