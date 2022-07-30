@@ -185,6 +185,7 @@ const IconComponent = (props: IconProps) => {
 
     case "MaterialCommunityIcons": {
       const MaterialCommunityIcons = require("react-native-vector-icons/MaterialCommunityIcons");
+
       return <MaterialCommunityIcons {...textProps} {...commonProps} />;
     }
 

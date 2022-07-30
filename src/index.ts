@@ -1,6 +1,5 @@
-export * from "./hooks";
 export { getDeviceNativeLanguage } from "./device-native-language";
+export * from "./hooks";
 export { getWindowHeight, getWindowWidth, normalize } from "./layout";
-export { showNativeAlert, INativeAlertProps } from "./native-alert";
-export { useBackButtonHandler, getCurrentRouteName } from "./navigation";
+export { getCurrentRouteName, useBackButtonHandler } from "./navigation";
 export { Icon, IconProps, IconType } from "./rn-vector-icons";
