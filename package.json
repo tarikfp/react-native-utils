@@ -1,6 +1,6 @@
 {
   "name": "@tarikfp/react-native-utils",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
