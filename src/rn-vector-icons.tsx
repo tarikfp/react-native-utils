@@ -6,6 +6,19 @@ import type {
   TextProps,
   TextStyle,
 } from "react-native";
+import AntDesign from "react-native-vector-icons/AntDesign";
+import Entypo from "react-native-vector-icons/Entypo";
+import EvilIcons from "react-native-vector-icons/EvilIcons";
+import Feather from "react-native-vector-icons/Feather";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import Fontisto from "react-native-vector-icons/Fontisto";
+import Foundation from "react-native-vector-icons/Foundation";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import Octicons from "react-native-vector-icons/Octicons";
+import Zocial from "react-native-vector-icons/Zocial";
 
 export interface RNVectorIconsIconProps extends TextProps {
   /**
@@ -126,17 +139,14 @@ const IconComponent = (props: IconProps) => {
 
   switch (props.type) {
     case "AntDesign": {
-      const AntDesign = require("react-native-vector-icons/AntDesign").default;
       return <AntDesign {...textProps} {...commonProps} />;
     }
 
     case "Entypo": {
-      const Entypo = require("react-native-vector-icons/Entypo").default;
       return <Entypo {...textProps} {...commonProps} />;
     }
 
     case "Ionicons": {
-      const Ionicons = require("react-native-vector-icons/Ionicons").default;
       return <Ionicons {...textProps} {...commonProps} />;
     }
 
@@ -147,26 +157,20 @@ const IconComponent = (props: IconProps) => {
     }
 
     case "EvilIcons": {
-      const EvilIcons = require("react-native-vector-icons/EvilIcons").default;
       return <EvilIcons {...textProps} {...commonProps} />;
     }
 
     case "MaterialIcons": {
-      const MaterialIcons =
-        require("react-native-vector-icons/MaterialIcons").default;
       return <MaterialIcons {...textProps} {...commonProps} />;
     }
 
     case "FontAwesome": {
-      const FontAwesome =
-        require("react-native-vector-icons/FontAwesome").default;
       return <FontAwesome {...textProps} {...commonProps} />;
     }
 
     case "FontAwesome5": {
       const { brand, solid } = props;
-      const FontAwesome5 =
-        require("react-native-vector-icons/FontAwesome5").default;
+
       return (
         <FontAwesome5
           {...textProps}
@@ -178,39 +182,29 @@ const IconComponent = (props: IconProps) => {
     }
 
     case "Foundation": {
-      const Foundation =
-        require("react-native-vector-icons/Foundation").default;
       return <Foundation {...textProps} {...commonProps} />;
     }
 
     case "MaterialCommunityIcons": {
-      const MaterialCommunityIcons = require("react-native-vector-icons/MaterialCommunityIcons");
-
       return <MaterialCommunityIcons {...textProps} {...commonProps} />;
     }
 
     case "Zocial": {
-      const Zocial = require("react-native-vector-icons/Zocial").default;
       return <Zocial {...textProps} {...commonProps} />;
     }
 
     case "Octicons": {
-      const Octicons = require("react-native-vector-icons/Octicons").default;
       return <Octicons {...textProps} {...commonProps} />;
     }
 
     case "Fontisto": {
-      const Fontisto = require("react-native-vector-icons/Fontisto").default;
       return <Fontisto {...textProps} {...commonProps} />;
     }
 
     case "Feather": {
-      const Feather = require("react-native-vector-icons/Feather").default;
       return <Feather {...textProps} {...commonProps} />;
     }
     default: {
-      const FontAwesome =
-        require("react-native-vector-icons/FontAwesome").default;
       return <FontAwesome {...textProps} {...commonProps} />;
     }
   }
