@@ -128,34 +128,6 @@ function App() {
 }
 ```
 
-## Native alert
-
-#### Displays an native alert dialog with the specified params
-
-```javascript
-import * as React from 'react'
-import { showNativeAlert } from '@tarikfp/react-native-utils'
-
-function App() {
-  ...
-
-  /* Sample scenario, where the user provides wrong credentials, then sees alert */
-
-  const { data } = myApi.login('username','12345')
-
-  if(data.invalidCredentials){
-      showNativeAlert({
-          title: 'Invalid',
-          content: 'Invalid credentials',
-          buttonOneText: 'Try Again',
-          buttonTwoText: 'Ok',
-          onPressButtonOne: () => handleButtonOnePress(),
-          onPressButtonTwo: () => handleButtonTwoPress(),
-      });
-  }
-}
-```
-
 ## Icon component
 
 #### Wrapper over a react native vector package which enables dynamic usage of react-native-vector icons.
